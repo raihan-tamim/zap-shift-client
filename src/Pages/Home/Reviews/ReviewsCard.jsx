@@ -3,7 +3,7 @@ import { FaQuoteLeft } from "react-icons/fa";
 
 const ReviewsCard = ({ reviews }) => {
     const { userName, ratings, review, user_photoURL, date } = reviews;
-    console.log(reviews)
+    
     return (
         <div className="card bg-base-100 shadow-md hover:shadow-xl transition-all duration-300 rounded-3xl p-8 max-w-sm">
 
