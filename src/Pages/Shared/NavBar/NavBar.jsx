@@ -1,4 +1,4 @@
-import { Link, NavLink, useLocation } from "react-router";
+import { Link, NavLink} from "react-router";
 import Logo from "../../../Components/Logo/Logo";
 import UseAuth from "../../../Hooks/UseAuth";
 
@@ -8,9 +8,14 @@ const NavBar = () => {
     const links = <>
     <li><NavLink to='/'>Services</NavLink></li>
     <li><NavLink to='/coverage'>Coverage</NavLink></li>
-    <li><NavLink to='/'>Average</NavLink></li>
-    <li><NavLink to='/'>Pricing</NavLink></li>
-    <li><NavLink to='/'>Be a rider</NavLink></li>
+    <li><NavLink to='/send-parcel'>Send Parcel</NavLink></li>
+    
+    {
+        user && <>
+        <li><NavLink to='/dashboard/my-parcels'>My Parcels</NavLink></li>
+        </>
+    }
+
     </>
 
     const handleLogout=()=>{

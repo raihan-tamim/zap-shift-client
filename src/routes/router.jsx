@@ -7,6 +7,14 @@ import Login from "../Pages/Auth/Login/Login";
 import Register from "../Pages/Auth/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import Rider from "../Pages/Rider/Rider";
+import SendParcel from "../Pages/SendParcel/SendParcel";
+import DashBoardLayout from "../Layouts/DashBoardLayout";
+import MyParcels from "../Pages/Dashboard/MyParcels/MyParcels";
+import Payment from "../Pages/Dashboard/Payment/Payment";
+import PaymentSuccess from "../Pages/Dashboard/Payment/PaymentSuccess";
+import PaymentCancel from "../Pages/Dashboard/Payment/PaymentCancel";
+import PaymentHistory from './../Pages/Dashboard/PaymentHistory/PaymentHistory';
+import ApproveRider from "../Pages/Dashboard/ApproveRider/ApproveRider";
 
 
 export const router = createBrowserRouter([
@@ -25,7 +33,13 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/rider',
-                element: <PrivateRoute><Rider></Rider></PrivateRoute>
+                element: <PrivateRoute><Rider></Rider></PrivateRoute>,
+                loader: ()=> fetch('servicecenter.json').then(res=>res.json())
+            },
+            {
+                path: '/send-parcel',
+                element: <PrivateRoute><SendParcel></SendParcel></PrivateRoute>,
+                loader: ()=> fetch('servicecenter.json').then(res=>res.json())
             }
         ]
     },
@@ -42,5 +56,36 @@ export const router = createBrowserRouter([
                 Component: Register
             }
         ]
+    },
+    {
+        path: 'dashboard',
+        element: <PrivateRoute><DashBoardLayout></DashBoardLayout></PrivateRoute>,
+        children:[
+            {
+                path: 'my-parcels',
+                Component: MyParcels
+            }, 
+            {
+                path: 'payment/:parcelId',
+                Component: Payment
+            },
+            {
+                path: 'payment-history',
+                Component: PaymentHistory
+            },
+            {
+                path: 'payment-success',
+                Component: PaymentSuccess
+            },
+            {
+                path: 'payment-cancelled',
+                Component: PaymentCancel
+            },
+            {
+                path: 'approve-rider',
+                Component: ApproveRider
+            }
+        ]
     }
+
 ]);
