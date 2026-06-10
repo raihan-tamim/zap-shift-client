@@ -1,14 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-import UseAuth from "../../../Hooks/UseAuth";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
-import { FaRegTrashAlt, FaUserCheck } from "react-icons/fa";
+import { FaEye, FaRegTrashAlt, FaUserCheck } from "react-icons/fa";
 import { IoPersonRemoveSharp } from "react-icons/io5";
 import Swal from "sweetalert2";
 
 
 const ApproveRider = () => {
     const axiosSecure = useAxiosSecure();
-    const { user } = UseAuth();
 
     const {refetch, data: riders = [] } = useQuery({
         queryKey: ['riders', 'pending'],
@@ -58,7 +56,8 @@ const ApproveRider = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>District</th>
-                            <th>Status</th>
+                            <th>Application Status</th>
+                            <th>Work Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -72,7 +71,11 @@ const ApproveRider = () => {
                                 <td className={`${rider.status === 'approved' ? 'text-green-400 font-semibold' : 'text-red-500 font-semibold'}`}>
                                     {rider.status}
                                 </td>
+                                <td>{rider.workStatus}</td>
                                 <td className="space-x-2">
+                                    <button onClick={''} className="btn btn-sm hover:bg-primary">
+                                        <FaEye />
+                                    </button>
                                     <button onClick={() => handleApprove(rider)} className="btn btn-sm hover:bg-primary">
                                         <FaUserCheck />
                                     </button>

@@ -1,9 +1,13 @@
 import { CiDeliveryTruck } from "react-icons/ci";
-import { FaMotorcycle, FaRegCreditCard } from "react-icons/fa";
+import { FaMotorcycle, FaRegCreditCard, FaUsers } from "react-icons/fa";
 import { Link, Outlet } from "react-router";
+import useRole from "../Hooks/useRole";
+import { RiEBikeFill } from "react-icons/ri";
 
 
 const DashBoardLayout = () => {
+    const {role} = useRole();
+    
     return (
         <div className="drawer lg:drawer-open max-w-7xl mx-auto">
             <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
@@ -47,12 +51,29 @@ const DashBoardLayout = () => {
                             <span className="is-drawer-close:hidden">Payment History</span>
                             </Link>
                         </li>
-                        <li>
+                        {
+                            role === 'admin' && <>
+                            <li>
                             <Link to='/dashboard/approve-rider' className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Approve rider">
                             <FaMotorcycle />
                             <span className="is-drawer-close:hidden">Approve rider </span>
                             </Link>
                         </li>
+                            <li>
+                            <Link to='/dashboard/assign-rider' className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Assign rider">
+                            <RiEBikeFill />
+                            <span className="is-drawer-close:hidden">Assign rider </span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to='/dashboard/manage-users' className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Manage Users">
+                            <FaUsers />
+                            <span className="is-drawer-close:hidden">Manage Users </span>
+                            </Link>
+                        </li>
+                            </>
+                        }
+                        
 
                         {/* List item */}
                         <li>
