@@ -1,8 +1,11 @@
-import { CiDeliveryTruck } from "react-icons/ci";
+
 import { FaMotorcycle, FaRegCreditCard, FaUsers } from "react-icons/fa";
 import { Link, Outlet } from "react-router";
 import useRole from "../Hooks/useRole";
 import { RiEBikeFill } from "react-icons/ri";
+import { FaTruckArrowRight } from "react-icons/fa6";
+import { BsBox2Fill } from "react-icons/bs";
+import { SiGoogletasks } from "react-icons/si";
 
 
 const DashBoardLayout = () => {
@@ -39,9 +42,10 @@ const DashBoardLayout = () => {
                             </Link>
                         </li>
                         {/* our dashboard links */}
+                        
                         <li>
                             <Link to='/dashboard/my-parcels' className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="My-Parcels">
-                            <CiDeliveryTruck />
+                            <BsBox2Fill />
                             <span className="is-drawer-close:hidden">My Parcels</span>
                             </Link>
                         </li>
@@ -51,6 +55,24 @@ const DashBoardLayout = () => {
                             <span className="is-drawer-close:hidden">Payment History</span>
                             </Link>
                         </li>
+                        {/* riders only links */}
+                        {
+                            role === 'rider' && <>
+                            <li>
+                            <Link to='/dashboard/assigned-deliveries' className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Assigned deliveries">
+                            <FaTruckArrowRight />
+                            <span className="is-drawer-close:hidden">Assigned deliveries</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to='/dashboard/completed-deliveries' className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Completed Deliveries">
+                            <SiGoogletasks />
+                            <span className="is-drawer-close:hidden">Completed Deliveries</span>
+                            </Link>
+                        </li>
+                            </>
+                        }
+                        {/* admin only links */}
                         {
                             role === 'admin' && <>
                             <li>
