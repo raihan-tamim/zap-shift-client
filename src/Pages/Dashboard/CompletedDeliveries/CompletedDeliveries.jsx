@@ -7,7 +7,7 @@ const CompletedDeliveries = () => {
     const { user } = UseAuth();
     const axiosSecure = useAxiosSecure();
 
-    const { data: parcels = [], refetch } = useQuery({
+    const { data: parcels = []} = useQuery({
         queryKey: ['parcels', user.email, 'rider-assigned'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/parcels/rider?riderEmail=${user?.email}&deliveryStatus=parcel-delivered`)

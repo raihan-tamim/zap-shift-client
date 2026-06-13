@@ -2,11 +2,13 @@ import { useQuery } from "@tanstack/react-query";
 import UseAuth from "../../../Hooks/UseAuth";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 
 const AssignedDeliveries = () => {
     const { user } = UseAuth();
     const axiosSecure = useAxiosSecure();
+    const [disabled, setDisabled] = useState(false);
 
     const { data: parcels = [], refetch } = useQuery({
         queryKey: ['parcels', user.email, 'rider-assigned'],
@@ -19,13 +21,15 @@ const AssignedDeliveries = () => {
     const handleChangeDeliveryStatus = (parcel, status) => {
         const statusInfo = {
             deliveryStatus: status,
-            riderId: parcel.riderId
+            riderId: parcel.riderId,
+            trackingId: parcel.trackingId
         };
         let message = `Parcel status updated to ${status.split('-').join(' ')}`
         axiosSecure.patch(`/parcels/${parcel._id}/status`, statusInfo)
             .then(res => {
                 if (res.data.modifiedCount) {
                     refetch();
+                    setDisabled(true)
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
@@ -47,7 +51,7 @@ const AssignedDeliveries = () => {
                             <th></th>
                             <th>Name</th>
                             <th>Confirm</th>
-                            <th>Other Action</th>
+                            <th>Other Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -68,9 +72,14 @@ const AssignedDeliveries = () => {
                                     parcel.deliveryStatus === 'rider-assigned' ?
                                         <button className="btn btn-disabled text-black">Accept to get actions</button>
                                         : <>
-                                            <button onClick={() => { handleChangeDeliveryStatus(parcel, 'parcel-picked') }} className="btn btn-primary text-black">Mark as picked-up</button>
-                                            <button onClick={() => { handleChangeDeliveryStatus(parcel, 'parcel-delivered') }} className="btn btn-primary ms-2 text-black">Mark as Delivered</button>
+                                            <button disabled={disabled} onClick={() => { handleChangeDeliveryStatus(parcel, 'parcel-picked') }} className="btn btn-primary text-black">Mark as picked-up</button>
+
+
                                         </>
+                                }
+                                {
+                                    parcel.deliveryStatus === 'parcel-picked' &&
+                                    <button onClick={() => { handleChangeDeliveryStatus(parcel, 'parcel-delivered') }} className="btn btn-primary ms-2 text-black">Mark as Delivered</button>
                                 }
 
                             </td>
