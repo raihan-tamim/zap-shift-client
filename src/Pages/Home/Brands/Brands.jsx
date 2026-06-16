@@ -14,26 +14,27 @@ const Brands = () => {
     const originalBrands = [amazon, amazon_vector, casio, moonstar, randstad, star, start_people];
     const brands = [...originalBrands, ...originalBrands]
     return (
-        <Swiper
-            loop={true}
-            slidesPerView={4}
-            centeredSlides={true}
-            spaceBetween={30}
-            grabCursor={true}
-            modules={[Autoplay]}
-            autoplay={{
-                delay: 1000,
-                disableOnInteraction: false,
-            }}
-        >
-            {
-                brands.map((brand, index) => <SwiperSlide key={index}>
-                    <img src={brand} alt="" />
-                </SwiperSlide>)
-            }
-
-
-        </Swiper>
+        <div className='my-16'>
+            <h1 className="text-3xl font-bold text-center text-secondary my-8">We've helped thousands of sales teams</h1>
+            <Swiper
+                loop={true}
+                slidesPerView={4}
+                centeredSlides={true}
+                spaceBetween={30}
+                grabCursor={true}
+                modules={[Autoplay]}
+                autoplay={{
+                    delay: 1000,
+                    disableOnInteraction: false,
+                }}
+            >
+                {
+                    brands.map((brand, index) => <SwiperSlide key={index}>
+                        <img src={brand} alt="" />
+                    </SwiperSlide>)
+                }
+            </Swiper>
+        </div>
     );
 };
 

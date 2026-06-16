@@ -2,7 +2,7 @@ import { FaQuoteLeft } from "react-icons/fa";
 
 
 const ReviewsCard = ({ reviews }) => {
-    const { userName, ratings, review, user_photoURL, date } = reviews;
+    const { userName, review, user_photoURL } = reviews;
     
     return (
         <div className="card bg-base-100 shadow-md hover:shadow-xl transition-all duration-300 rounded-3xl p-8 max-w-sm">
@@ -30,7 +30,6 @@ const ReviewsCard = ({ reviews }) => {
                     <h3 className="font-bold text-secondary text-lg">
                         {userName}
                     </h3>
-
                     <p className="text-sm text-base-content/60">
                         Senior Product Designer
                     </p>

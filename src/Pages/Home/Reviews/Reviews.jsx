@@ -10,10 +10,10 @@ const Reviews = ({ reviewPromise }) => {
     return (
         <div>
             <div className="my-10">
-                <h1 className="text-5xl font-bold text-center">What our customers are sayings</h1>
+                <h1 className="text-4xl text-secondary font-bold text-center">What our customers are sayings</h1>
                 <p className="text-center my-5">Enhance posture, mobility, and well-being effortlessly with Posture Pro. Achieve proper alignment, reduce <br /> pain, and strengthen your body with ease!</p>
                 <>
-                    <Swiper
+                    <Swiper 
                         loop={true}
                         effect={'coverflow'}
                         grabCursor={true}

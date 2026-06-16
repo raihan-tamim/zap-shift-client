@@ -6,7 +6,6 @@ import { useRef } from "react";
 
 const Coverage = () => {
     const serviceCenters = useLoaderData();
-    // console.log(serviceCenters)
     const searchRef = useRef(null)
     const position = [23.6850, 90.3563]
 
@@ -16,7 +15,6 @@ const Coverage = () => {
         const district = serviceCenters.find(c => c.district.toLowerCase().includes(location.toLowerCase()));
         if(district){
             const coord = [district.latitude, district.longitude];
-            console.log(district, coord)
             searchRef.current.flyTo(coord, 14)
         }
     }
@@ -40,7 +38,6 @@ const Coverage = () => {
                             </g>
                         </svg>
                         <input type="search" name="location" className="grow" placeholder="Search" />
-                        
                     </label>
                 </form>
             </div>

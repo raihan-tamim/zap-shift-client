@@ -14,10 +14,11 @@ const ParcelTrack = () => {
             return res.data;
         }
     })
+    
     return (
         <div className="p-8">
             <h2 className="text-3xl font-bold">Your parcels tracking id is: {trackingId}</h2>
-            <h2 className="text-2xl my-4 font-bold">Logs so far 5 out of : {trackings.length}</h2>
+            <h2 className="text-2xl my-4 font-bold">Logs so far: {trackings.length}</h2>
             <ul className="timeline timeline-vertical py-10">
                 {
                     trackings.map(log=> <li key={log._id}>

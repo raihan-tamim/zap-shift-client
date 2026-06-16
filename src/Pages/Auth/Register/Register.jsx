@@ -55,7 +55,6 @@ const Register = () => {
                                 navigate(location?.state || '/')
                             })
                             .catch(err => console.log(err))
-
                     })
             }).catch(error => {
                 console.log(error)

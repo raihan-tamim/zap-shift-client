@@ -8,15 +8,12 @@ import Logo from "../../../Components/Logo/Logo";
 const Login = () => {
     const {signInUser} = UseAuth();
     const location = useLocation();
-    console.log(location)
     const navigate =useNavigate();
     const {register, handleSubmit, formState: {errors}}= useForm();
 
     const onSubmit=(data)=>{
-        console.log(data)
         signInUser(data.email, data.password)
-        .then(result=>{
-            console.log(result.user)
+        .then(()=>{
             navigate(location?.state || '/')
         }).catch(error=>{
             console.log(error)

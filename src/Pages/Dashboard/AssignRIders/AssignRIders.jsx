@@ -18,7 +18,7 @@ const AssignRIders = () => {
         }
     })
 
-    const { data: riders = [] } = useQuery({
+    const { data: riders = [], refetch: riderRefetch } = useQuery({
         queryKey: ['riders', selectedParcel?.senderDistrict, 'available'],
         enabled: !!selectedParcel,
         queryFn: async () => {
@@ -45,6 +45,7 @@ const AssignRIders = () => {
                 if (res.data.modifiedCount) {
                     riderModalRef.current.close();
                     parcelRefetch()
+                    riderRefetch()
                     Swal.fire({
                         position: "top-end",
                         icon: "success",

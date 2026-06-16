@@ -2,6 +2,7 @@ import { Link } from "react-router";
 
 
 const PaymentCancel = () => {
+    
     return (
         <div>
             <h1 className='text-5xl font bold'>Payment cancelled</h1>
