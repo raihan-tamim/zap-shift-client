@@ -34,11 +34,13 @@ const Reviews = ({ reviewPromise }) => {
                         modules={[EffectCoverflow, Autoplay]}
                         className="mySwiper"
                     >
-                        {
+                        <div className="">
+                            {
                             reviewsData.map(reviews => <SwiperSlide key={reviews.id}>
                                 <ReviewsCard reviews={reviews}></ReviewsCard>
                             </SwiperSlide>)
                         }
+                        </div>
                     </Swiper>
                 </>
             </div>

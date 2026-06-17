@@ -5,7 +5,7 @@ const ReviewsCard = ({ reviews }) => {
     const { userName, review, user_photoURL } = reviews;
     
     return (
-        <div className="card bg-base-100 shadow-md hover:shadow-xl transition-all duration-300 rounded-3xl p-8 max-w-sm">
+        <div className="card  bg-base-100 shadow-md hover:shadow-xl transition-all duration-300 rounded-3xl p-8 max-w-sm">
 
             {/* Quote */}
             <FaQuoteLeft className="text-4xl text-primary mb-5" />

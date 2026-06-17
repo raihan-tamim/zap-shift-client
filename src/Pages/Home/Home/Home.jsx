@@ -1,5 +1,6 @@
 import Banner from "../Banner/Banner";
 import Brands from "../Brands/Brands";
+import Faq from "../FAQ/Faq";
 import HowItWorks from "../HowItworks/HowItWorks";
 import OurServices from "../OurServices/OurServices";
 import Reviews from "../Reviews/Reviews";
@@ -15,6 +16,7 @@ const Home = () => {
             <OurServices></OurServices>
             <Brands></Brands>
             <Reviews reviewPromise={reviewPromise}></Reviews>
+            <Faq></Faq>
         </div>
     );
 };
