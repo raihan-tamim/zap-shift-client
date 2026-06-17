@@ -24,12 +24,14 @@ import CompletedDeliveries from "../Pages/Dashboard/CompletedDeliveries/Complete
 import ParcelTrack from "../Pages/ParcelTrack/ParcelTrack";
 import DashboardHome from "../Pages/Dashboard/DashboardHome/DashboardHome";
 import AboutUs from "../Pages/AboutUs/AboutUs";
+import Errorpage from "../Pages/Errorpage/Errorpage";
 
 
 export const router = createBrowserRouter([
     {
         path: "/",
         Component: RootLayout,
+        errorElement: <Errorpage></Errorpage>,
         children: [
             {
                 index: true,

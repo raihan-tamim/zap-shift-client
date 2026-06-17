@@ -1,5 +1,6 @@
 import { Navigate, useLocation } from "react-router";
 import UseAuth from "../Hooks/UseAuth";
+import LoadingPage from "../Components/Loading/LoadingPage";
 
 
 const PrivateRoute = ({children}) => {
@@ -7,7 +8,7 @@ const PrivateRoute = ({children}) => {
     const location = useLocation();
 
     if(loading){
-        return <span className="loading loading-spinner text-primary loading-xl"></span>
+        return <LoadingPage></LoadingPage>
     }
 
     if(!user){

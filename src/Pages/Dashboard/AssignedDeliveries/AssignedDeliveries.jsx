@@ -72,9 +72,7 @@ const AssignedDeliveries = () => {
                                     parcel.deliveryStatus === 'rider-assigned' ?
                                         <button className="btn btn-disabled text-black">Accept to get actions</button>
                                         : <>
-                                            <button disabled={disabled} onClick={() => { handleChangeDeliveryStatus(parcel, 'parcel-picked') }} className="btn btn-primary text-black">Mark as picked-up</button>
-
-
+                                            <button disabled={disabled} onClick={() => { handleChangeDeliveryStatus(parcel, 'parcel-picked') }} className="btn btn-primary text-black">Mark as picked-up</button> 
                                         </>
                                 }
                                 {
