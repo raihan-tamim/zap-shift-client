@@ -23,6 +23,7 @@ import RiderRoute from "./RiderRoute";
 import CompletedDeliveries from "../Pages/Dashboard/CompletedDeliveries/CompletedDeliveries";
 import ParcelTrack from "../Pages/ParcelTrack/ParcelTrack";
 import DashboardHome from "../Pages/Dashboard/DashboardHome/DashboardHome";
+import AboutUs from "../Pages/AboutUs/AboutUs";
 
 
 export const router = createBrowserRouter([
@@ -52,6 +53,10 @@ export const router = createBrowserRouter([
                 path: '/send-parcel',
                 element: <PrivateRoute><SendParcel></SendParcel></PrivateRoute>,
                 loader: ()=> fetch('servicecenter.json').then(res=>res.json())
+            },
+            {
+                path: '/about-us',
+                element: <AboutUs></AboutUs>
             }
         ]
     },

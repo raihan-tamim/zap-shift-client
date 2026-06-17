@@ -30,8 +30,8 @@ const OurServices = () => {
                             className="bg-gray-200 p-5 rounded-full " />
                     </figure>
                     <div className="card-body items-center text-center">
-                        <h2 className="card-title">Express  & Standard Delivery</h2>
-                        <p>We deliver parcels within 24–72 hours in Dhaka, Chittagong, Sylhet, Khulna, and Rajshahi.Express delivery available in Dhaka within 4–6 hours from pick-up to drop-off.</p>
+                        <h2 className="card-title">Fulfillment Solution</h2>
+                        <p>We also offer customized service with inventory management support, online order processing, packaging, and after sales support.</p>
                         <div className="card-actions">
                         </div>
                     </div>
@@ -45,8 +45,8 @@ const OurServices = () => {
                             className="bg-gray-200 p-5 rounded-full " />
                     </figure>
                     <div className="card-body items-center text-center">
-                        <h2 className="card-title">Express  & Standard Delivery</h2>
-                        <p>We deliver parcels within 24–72 hours in Dhaka, Chittagong, Sylhet, Khulna, and Rajshahi.Express delivery available in Dhaka within 4–6 hours from pick-up to drop-off.</p>
+                        <h2 className="card-title">Nationwide Delivery</h2>
+                        <p>We deliver parcels nationwide with home delivery in every district, ensuring your products reach customers within 48–72 hours.</p>
                         <div className="card-actions">
                         </div>
                     </div>
@@ -60,8 +60,8 @@ const OurServices = () => {
                             className="bg-gray-200 p-5 rounded-full " />
                     </figure>
                     <div className="card-body items-center text-center">
-                        <h2 className="card-title">Express  & Standard Delivery</h2>
-                        <p>We deliver parcels within 24–72 hours in Dhaka, Chittagong, Sylhet, Khulna, and Rajshahi.Express delivery available in Dhaka within 4–6 hours from pick-up to drop-off.</p>
+                        <h2 className="card-title">Fulfillment Solution</h2>
+                        <p>We also offer customized service with inventory management support, online order processing, packaging, and after sales support.</p>
                         <div className="card-actions">
                         </div>
                     </div>
@@ -90,8 +90,8 @@ const OurServices = () => {
                             className="bg-gray-200 p-5 rounded-full " />
                     </figure>
                     <div className="card-body items-center text-center">
-                        <h2 className="card-title">Express  & Standard Delivery</h2>
-                        <p>We deliver parcels within 24–72 hours in Dhaka, Chittagong, Sylhet, Khulna, and Rajshahi.Express delivery available in Dhaka within 4–6 hours from pick-up to drop-off.</p>
+                        <h2 className="card-title">Fulfillment Solution </h2>
+                        <p>We deliver parcels nationwide with home delivery in every district, ensuring your products reach customers within 48–72 hours.</p>
                         <div className="card-actions">
                         </div>
                     </div>
